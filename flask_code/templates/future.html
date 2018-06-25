@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dan's Blood Sugar Time Machine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Dan's Blood Sugar Time Machine</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="http://localhost:5000/">Home</a></li>
+          <li><a href="/history">History</a></li>
+          <li class=active><a href="/forecast">Future</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+
+  <body>
+    {{ the_div|safe }}
+      <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.14.min.js"></script>
+      <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.14.min.js"></script>
+      {{ the_script|safe }}
+  </body>
+</html>

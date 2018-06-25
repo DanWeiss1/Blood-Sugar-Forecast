@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dan's Blood Sugar Time Machine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Dan's Blood Sugar Time Machine</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class=active><a href="http://localhost:5000/">Home</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/forecast">Future</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+<body link="blue">
+<div class="row">
+  <div class="col-sm-100 col-md-6">
+    <div class="thumbnail">
+      <img src="{{url_for('static',filename='Past.jpg')}}" alt="Past">
+      <div class="caption">
+        <h3>Let's go to the Past!</h3>
+        <p>Click below to enter the time machine and see past blood sugar results</p>
+        <p><a href="/history" class="btn btn-primary" role="button">Time Travel</a> 
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-70 col-md-6">
+    <div class="thumbnail">
+      <img src="{{url_for('static',filename='Future.jpg')}}" alt="Future">
+      <div class="caption">
+        <h3>Let's go to the Future!</h3>
+        <p>Click below to enter the time machine and venture into the future</p>
+        <p><a href="/forecast" class="btn btn-primary" role="button">Time Travel</a> 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

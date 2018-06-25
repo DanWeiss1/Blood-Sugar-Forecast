@@ -1,0 +1,6 @@
+flask_code/conf.yaml
+future.mov
+history.mov
+.ipynb_checkpoints/
+.DS_Store
+flask_code/__pycache__
