@@ -2,7 +2,7 @@
 
 **tl;dr:** I used AR models on 3 months of blood sugar data taken from my Dexcom Continuous Glucose Monitor in order to forecast my blood sugar 15 minutes into the future.
 
-I then serve those predictions in a Flask Web App which also allows me to dynamically view historical data.   
+I then serve those predictions in a Flask Web App which also allows me to dynamically view historical data and view live predictions.   
 
 ## Quick start
 
