@@ -134,7 +134,7 @@ const = np.mean(1 - res.arparams)
 test['y_hat'] = const 
 for i in range(1,4):
     test['y_hat'] += test['lag_' + str(i)] * res.params[i]
-time_list = [(datetime.datetime(1,1,1,0,0,0) + datetime.timedelta(hours=3)* x).time() for x in range(8)]
+
 oneday_pred = test.loc[test['date'].dt.date == day]
 oneday_pred['time'] = oneday_pred['date'].dt.time
 fig = plt.figure()
@@ -147,12 +147,11 @@ ax1.set_xlabel('Time', fontsize=14)
 ax1.axhline(y=80,color='black')
 ax1.axhline(y=180,color='black')
 ax2 = ax1.twinx()
-ax2.plot_date(x=oneday_pred.time, y=oneday_pred['y_hat'],color='orange',alpha=0.5, marker='o', label = "Predicted Blood Sugar")
+ax2.plot_date(x=oneday_pred.time, y=oneday_pred['y_hat'],color='green',alpha=0.5, marker='o', label = "Predicted Blood Sugar")
 lines, labels = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax2.legend(lines + lines2, labels + labels2, loc=0)
 ax2.set_ylim(0,300)
-plt.xticks(time_list)
 plt.tight_layout()
 
 plt.savefig('Graphics/Blood Sugar Actual Forecast.png')
@@ -180,3 +179,5 @@ print(mean_squared_error(lr.predict(x_test),y_test)**0.5)
 print(mean_absolute_error(lr.predict(x_test),y_test))
 print(lr.coef_)
 
+rmse_data['y_hat'] = lr.predict(x_test)
+plt.scatter(rmse_data['y_hat'],rmse_data['blood sugar'])
